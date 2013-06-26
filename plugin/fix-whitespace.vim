@@ -12,7 +12,7 @@ augroup END
 " Fix trailing whitespace.
 function! s:RemoveWhitespace(from, to)
   let l:current_pos_list = getpos(".")
-  execute a:from . ',' . a:to . 's/\s\+$//'
+  execute 'silent! ' . a:from . ',' . a:to . 's/\s\+$//'
   call setpos(".", l:current_pos_list)
 endfunction
 
